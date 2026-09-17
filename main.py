@@ -1,4 +1,4 @@
-\# ===== 飞书文档/表格写入 MCP 服务 =====
+# ===== 飞书文档/表格写入 MCP 服务 =====
 
 import os
 
@@ -8,7 +8,7 @@ import requests
 
 from mcp.server.fastmcp import FastMCP
 
-\# 飞书应用凭证（从环境变量读取，部署时在Render里配置）
+# 飞书应用凭证（从环境变量读取，部署时在Render里配置）
 
 APP\_ID = os.environ.get("FEISHU\_APP\_ID", "")
 
@@ -16,7 +16,7 @@ APP\_SECRET = os.environ.get("FEISHU\_APP\_SECRET", "")
 
 BASE = "https://open.feishu.cn/open-apis"
 
-\# token 缓存（自动刷新，不用管）
+# token 缓存（自动刷新，不用管）
 
 \_token = {"value": None, "expire": 0}
 
@@ -50,7 +50,7 @@ def hd():
 
 &#x20;   return {"Authorization": f"Bearer {get\_token()}", "Content-Type": "application/json"}
 
-\# 创建 MCP 服务
+# 创建 MCP 服务
 
 mcp = FastMCP("feishu-doc-writer")
 
@@ -258,7 +258,7 @@ def append\_sheet(sheet\_token: str, rows: str) -> str:
 
 &#x20;   return "数据追加成功"
 
-\# 启动服务（监听平台分配的端口）
+# 启动服务（监听平台分配的端口）
 
 if \_\_name\_\_ == "\_\_main\_\_":
 
